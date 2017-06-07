@@ -1,16 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Aphrodite.Client.Manager;
 using UnityEngine;
 
-public class Agent : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+namespace Aphrodite.Client
+{
+	public class Agent : MonoObject
+	{
+		void Awake()
+		{
+			Debug.Log("Agent Loaded!");
+			SceneManager.Instance.LoadScene();
+		}
 	}
 }

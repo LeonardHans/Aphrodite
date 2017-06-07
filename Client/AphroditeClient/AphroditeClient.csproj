@@ -86,9 +86,12 @@
   <ItemGroup>
     <Compile Include="Assets\Script\Base\Agent.cs" />
     <Compile Include="Assets\Script\Base\AssetAssistant.cs" />
+    <Compile Include="Assets\Script\Base\MonoObject.cs" />
     <Compile Include="Assets\Script\Base\Singleton.cs" />
     <Compile Include="Assets\Script\Common\User\User.cs" />
     <Compile Include="Assets\Script\Manager\SceneManager.cs" />
+    <Compile Include="Assets\Script\Scene\LoadingScene.cs" />
+    <Compile Include="Assets\Script\Scene\Scene.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

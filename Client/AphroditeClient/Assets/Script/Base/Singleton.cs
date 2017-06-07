@@ -1,23 +1,26 @@
 ﻿using UnityEngine;
 
-public abstract class Singleton<T> : MonoBehaviour where T : Singleton<T>
+namespace Aphrodite.Client
 {
-	public static string Name
+	public abstract class Singleton<T> : MonoObject where T : Singleton<T>
 	{
-		get { return typeof(T).ToString(); }
-	}
-
-	static T instance;
-	public static T Instance
-	{
-		get
+		public static string Name
 		{
-			if (instance == null)
+			get { return typeof(T).ToString(); }
+		}
+
+		static T instance;
+		public static T Instance
+		{
+			get
 			{
-				instance = AssetAssistant.CreateComponent<T>(Name);
-				AssetAssistant.RegisterDontDestroy(instance.gameObject);
+				if (instance == null)
+				{
+					instance = AssetAssistant.CreateComponent<T>(Name);
+					AssetAssistant.RegisterDontDestroy(instance.gameObject);
+				}
+				return instance;
 			}
-			return instance;
 		}
 	}
 }
